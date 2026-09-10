@@ -1,0 +1,10 @@
+<html> 
+    <body>
+        <h1> MY TASK </h1>
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task.title }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
