@@ -7,11 +7,18 @@
             <h1 class="text-2xl font-bold text-gray-800 mb-4"> MY TASK </h1>
             <ul class="space-y-2">
                 {% for task in tasks %}
-                    <li class="p-3 bg-gray-50 rounded border border-gray-200">
-                        {{ task.title }}
+                    <li class="p-3 bg-gray-50 rounded border border-gray-200 flex justify-between items-center">
+                        <span>{{ task.title }}</span>
+                        <form accept="/delete/{{task.id}}" method="post">
+                            <button type="submit" class="text-red-500 hover:text-red-700 front-bold text-sm">delete</button>
+                        </form>
                     </li>
                 {% endfor %}
             </ul>
+            <form action="add" method="post" class="mb-4 flex gap-2">
+                <input type="text" name="task_title" class="border border-gray-300 p-2 rounded flex-1" placeholder="new task ..." required>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded font-bold hover:bg-blue-600">Add</button>
+            </form>
         </div>
     </body>
 </html>
