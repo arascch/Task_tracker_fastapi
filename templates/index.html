@@ -8,10 +8,17 @@
             <ul class="space-y-2">
                 {% for task in tasks %}
                     <li class="p-3 bg-gray-50 rounded border border-gray-200 flex justify-between items-center">
-                        <span>{{ task.title }}</span>
-                        <form action="/delete/{{task.id}}" method="post">
-                            <button type="submit" class="text-red-500 hover:text-red-700 front-bold text-sm">delete</button>
-                        </form>
+                        <div class="flex items-center gap-3">
+                            <form action="/update/{{task.id}}" method="post">
+                                <button type="submit" class="text-green-600 hover:text-green-800 font-bold text-sm">
+                                    {% if task.completed%} undo {% else %} Complete {%endif%}
+                                </button>
+                            </form>
+                            <span>{{ task.title }}</span>
+                            <form action="/delete/{{task.id}}" method="post">
+                                <button type="submit" class="text-red-500 hover:text-red-700 front-bold text-sm">delete</button>
+                            </form>
+                        </div>
                     </li>
                 {% endfor %}
             </ul>

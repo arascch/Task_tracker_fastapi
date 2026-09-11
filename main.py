@@ -33,3 +33,15 @@ def delete_task(task_id : int):
             session.delete(task)
             session.commit()
     return RedirectResponse(url="/" , status_code=303)
+
+@app.post("/update/{task_id}")
+def update_task(task_id:int):
+    with Session(engine) as session:
+        task = session.get(Task, task_id)
+
+        if task : 
+            task.completed = not task.completed
+
+            session.add(task)
+            session.commit()
+    return RedirectResponse(url="/" , status_code=303)
