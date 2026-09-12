@@ -18,9 +18,9 @@ def read_root(request: Request):
     )
 
 @app.post("/add")
-def add_task(task_title:str=Form(...)):
+def add_task(task_title:str=Form(...),task_category:str=Form(...)):
     with Session(engine) as session:
-        new_task = Task(title=task_title)
+        new_task = Task(title=task_title , category=task_category)
         session.add(new_task)
         session.commit()
     return RedirectResponse(url="/" , status_code=303)
