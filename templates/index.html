@@ -24,6 +24,12 @@
             </ul>
             <form action="add" method="post" class="mb-4 flex gap-2">
                 <input type="text" name="task_title" class="border border-gray-300 p-2 rounded flex-1" placeholder="new task ..." required>
+                <select name="task_category" class="border border-gray-300 rounded p-2">
+                    <option value="uncategorized">uncategorized</option>
+                    <option value="Work">Work</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Groceries">Groceries</option>
+                </select>
                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded font-bold hover:bg-blue-600">Add</button>
             </form>
         </div>
