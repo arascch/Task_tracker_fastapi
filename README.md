@@ -1,3 +1,3 @@
-Best Project to Learn FastAPI 
-Simple Task Tracker with FastAPI and Tailwind 
+Best Project to Learn FastAPI \n
+Simple Task Tracker with FastAPI and Tailwind \n
 Enjoy The Moment
